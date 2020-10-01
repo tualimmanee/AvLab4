@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, FlatList, TouchableHighlight } from 'react-native';
+import { View, Text, FlatList, TouchableHighlight,ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
 
@@ -19,10 +19,16 @@ const availableZipItems = [
 
 const ZipItem = ({ place, code, navigation }) => (
     <TouchableHighlight onPress={() => navigation.navigate('Weather', { zipCode: code })}>
+
+
         <View style={styles.backdrop}>
+       
             <Text style={{flex:1,fontSize: 25,textAlign:"center" }}>{place}</Text>
             <Text style={{flex:1,fontSize: 25,textAlign:"center"}}>{code}</Text>
+   
         </View>
+
+
     </TouchableHighlight>
 )
 
@@ -33,13 +39,15 @@ export default function ZipCodeScreen() {
     const navigation = useNavigation()
     return (
         <View>
-            
+             <ImageBackground source={require('../bgh.jpg')} style={styles.backdrop}>
+
             <FlatList
                 data={availableZipItems}
                 keyExtractor={_keyExtractor}
                 renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />}
             />
             <StatusBar style="auto" />
+            </ImageBackground>
         </View>
     );
 
@@ -47,10 +55,10 @@ export default function ZipCodeScreen() {
 
 const styles = StyleSheet.create({
     backdrop: {
-        borderRadius: 100,
-        borderWidth: 10,
+        borderRadius: 30,
+        borderWidth: 5,
         borderColor: 'green',
-        marginTop: 20,
+        marginTop: 15,
         fontSize: 35,
         flexDirection:'column',
         
