@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         borderWidth: 5,
         borderColor: 'green',
+        backgroundColor:'white',
         marginTop: 15,
         fontSize: 35,
         flexDirection:'column',
