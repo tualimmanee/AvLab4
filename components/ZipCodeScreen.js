@@ -23,8 +23,8 @@ const ZipItem = ({ place, code, navigation }) => (
 
         <View style={styles.backdrop}>
        
-            <Text style={{flex:1,fontSize: 25,textAlign:"center" }}>{place}</Text>
-            <Text style={{flex:1,fontSize: 25,textAlign:"center"}}>{code}</Text>
+            <Text style={{flex:1,fontSize: 25,textAlign:"center",fontStyle:"italic" }}>{place}</Text>
+            <Text style={{flex:1,fontSize: 25,textAlign:"center",fontStyle:"italic" }}>{code}</Text>
    
         </View>
 
@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
         fontSize: 35,
         flexDirection:'column',
-        
     },
    
 });
