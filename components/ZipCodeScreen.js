@@ -47,8 +47,9 @@ export default function ZipCodeScreen() {
 
 const styles = StyleSheet.create({
     backdrop: {
-        borderWidth: 0,
-        borderColor: 'blue',
+        borderRadius: 100,
+        borderWidth: 10,
+        borderColor: 'green',
         marginTop: 20,
         fontSize: 35,
         flexDirection:'column',
